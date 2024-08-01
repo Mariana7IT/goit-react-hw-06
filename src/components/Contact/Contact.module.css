@@ -4,9 +4,6 @@
   border: 2px solid #000;
   padding: 15px;
   width: 330px;
-  justify-content: start; 
-  gap:10px;
-  align-items: flex-start;
 }
 
 .contactInput {
@@ -14,8 +11,6 @@
   background-color: #f1dec7;
   margin-top: 5px;
   padding: 8px 0px 8px 2px;
-  width: 100%; 
-  box-sizing: border-box; 
 }
 
 .contactInput:hover {
@@ -24,13 +19,8 @@
 }
 
 .contactNumber {
- display: block;
-  padding: 8px 10px; 
+  display: block;
   margin-top: 15px;
-  width: 100%; 
-  box-sizing: border-box; 
-  background-color: #f1dec7; 
-  border: 2px solid #000;
 }
 
 .error {
