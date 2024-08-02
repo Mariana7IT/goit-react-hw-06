@@ -6,7 +6,8 @@ import * as Yup from "yup";
 import s from "./ContactForm.module.css";
 
 
-const contactSchema = Yup.object().shape({
+const initialValues = { name: "", number: "" };
+const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
   number: Yup.string().required("Number is required"),
 });
@@ -16,32 +17,30 @@ const ContactForm = () => {
 
   const handleSubmit = (values, { resetForm }) => {
     dispatch(addContact(values));
-    resetForm(); // Скидання форми після відправлення
+    resetForm();
   };
 
   return (
     <Formik
-      initialValues={{ name: "", number: "" }}
+      initialValues={initialValues}
+      validationSchema={validationSchema}
       onSubmit={handleSubmit}
-      validationSchema={contactSchema}
     >
-      {() => (
-        <Form className={s.wrapper}>
-          <label>
-            Name
-            <Field className={s.contactInput} type="text" name="name" />
-            <ErrorMessage name="name" component="span" className={s.error} />
-          </label>
-          <label>
-            Number
-            <Field className={s.contactInput} type="tel" name="number" />
-            <ErrorMessage name="number" component="span" className={s.error} />
-          </label>
-          <button type="submit" className={s.formBtn}>
-            Add contact
-          </button>
-        </Form>
-      )}
+      <Form className={s.wrapper}>
+        <label>
+          Name
+          <Field name="name" className={s.contactInput} />
+          <ErrorMessage name="name" component="span" className={s.error} />
+        </label>
+        <label>
+          Number
+          <Field name="number" className={s.contactInput} />
+          <ErrorMessage name="number" component="span" className={s.error} />
+        </label>
+        <button type="submit" className={s.formBtn}>
+          Add contact
+        </button>
+      </Form>
     </Formik>
   );
 };

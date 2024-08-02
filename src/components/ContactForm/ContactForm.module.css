@@ -4,10 +4,9 @@
   border: 2px solid #000;
   padding: 15px;
   width: 330px;
-  justify-content: start; 
   gap:10px;
-  align-items: flex-start;
-}
+ }
+
 
 .contactInput {
   border: 2px solid #000;
@@ -40,8 +39,8 @@
 
 .formBtn {
   background-color:#c78e43;
-  color: #fff;
-  /* width: 130px; */
+   color: #fff; 
+  /* width: 130px; */ 
   padding: 8px 15px;
   margin: 0 auto;
   margin-top: 15px;
