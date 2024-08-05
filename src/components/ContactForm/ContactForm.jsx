@@ -8,8 +8,14 @@ import s from "./ContactForm.module.css";
 
 const initialValues = { name: "", number: "" };
 const validationSchema = Yup.object({
-  name: Yup.string().required("Name is required"),
-  number: Yup.string().required("Number is required"),
+  name: Yup.string()
+    .required("This field is required!")
+    .min(3, "Too short!")
+    .max(50, "Too long!"),
+  number: Yup.string()
+    .required("This field is required!")
+    .min(3, "Too short!")
+    .max(50, "Too long!"),
 });
 
 const ContactForm = () => {
