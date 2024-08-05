@@ -6,6 +6,10 @@ import s from "./Contact.module.css";
 const Contact = ({ contact }) => {
   const dispatch = useDispatch();
   
+ const handleDelete = () => {
+   dispatch(deleteContact(contact.id));
+ };
+
   return (
     <li className={s.wrapper}>
       <span className={s.contactNumber}>
@@ -13,7 +17,7 @@ const Contact = ({ contact }) => {
       </span>
       <button
         className={s.formBtn}
-        onClick={() => dispatch(deleteContact(contact.id))}
+        onClick={handleDelete}
       >
         Delete
       </button>
